@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paruchuri Bhavya Sri — Portfolio</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#98a0b3;--accent:#7c3aed;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,var(--bg),#071023);-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+
+    .container{max-width:1100px;margin:36px auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:54px;height:54px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#2dd4bf);border-radius:12px;color:#fff;font-weight:700}
+    nav{display:flex;gap:18px}
+    .nav-link{padding:8px 10px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600}
+    .nav-link:hover{color:#fff;background:var(--glass)}
+    .hero{display:flex;flex-direction:column;gap:20px;align-items:flex-start;margin-bottom:28px}
+
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:16px;box-shadow:0 6px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+
+    .intro h1{font-size:30px;margin:0 0 8px}
+    .intro p{margin:0;color:var(--muted);line-height:1.5}
+    .cta{margin-top:14px;display:flex;gap:12px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-primary{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)}
+
+    .sections{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .skills .skill{margin-bottom:12px}
+    .skill .label{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+    .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:8px;margin-top:6px;overflow:hidden}
+    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#06b6d4);width:0;transition:width .9s cubic-bezier(.2,.9,.3,1)}
+
+    .projects{grid-column:span 3}
+    .projects-grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .project{padding:12px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+    .project h3{margin:0 0 6px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{margin-top:22px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:920px){
+      .sections{grid-template-columns:1fr}
+      .projects{grid-column:auto}
+    }
+
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">PB</div>
+        <div>
+          <div style="font-weight:700">Paruchuri Bhavya Sri</div>
+          <div style="font-size:13px;color:var(--muted)">Web Developer • ML Engineer</div>
+        </div>
+      </div>
+      <nav>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="intro card reveal">
+        <h1>Hi — I'm <span style="color:var(--accent)">Paruchuri Bhavya Sri</span></h1>
+        <p>I specialize in building efficient, scalable applications and AI-based systems. My passion lies in solving real-world problems through Machine Learning and automation.</p>
+        <div class="cta">
+          <button class="btn btn-primary" onclick="scrollToSection('projects')">See projects</button>
+          <button class="btn btn-ghost" onclick="copyEmail()">Copy email</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="card reveal">
+      <h2>About</h2>
+      <p style="color:var(--muted)">I have worked on multiple impactful projects, including <strong>Drone Footage Object Detection</strong> using <strong>Machine Learning</strong> and <strong>Python</strong>, and a <strong>Supermarket Database Management System</strong> implemented with SQL and Python. My focus is on creating efficient systems that combine intelligent automation with robust data handling.</p>
+    </section>
+
+    <div class="sections">
+      <div id="skills" class="card skills reveal">
+        <h3>Skills</h3>
+        <div class="skill">
+          <div class="label"><span>Python / ML</span><span>85%</span></div>
+          <div class="bar"><i style="width:85%"></i></div>
+        </div>
+        <div class="skill">
+          <div class="label"><span>TensorFlow / OpenCV</span><span>80%</span></div>
+          <div class="bar"><i style="width:80%"></i></div>
+        </div>
+        <div class="skill">
+          <div class="label"><span>SQL / Database Design</span><span>75%</span></div>
+          <div class="bar"><i style="width:75%"></i></div>
+        </div>
+        <div class="skill">
+          <div class="label"><span>HTML / CSS / JS</span><span>70%</span></div>
+          <div class="bar"><i style="width:70%"></i></div>
+        </div>
+      </div>
+
+      <div id="projects" class="card projects reveal">
+        <h3>Projects</h3>
+        <div class="projects-grid">
+          <article class="project">
+            <h3>Drone Footage Object Detection</h3>
+            <p>An ML-based project that detects and classifies objects in aerial drone footage using YOLO and OpenCV. Built in Python for high-performance data processing and image analysis.</p>
+          </article>
+          <article class="project">
+            <h3>Supermarket Database Management System</h3>
+            <p>A full-stack project that manages inventory, suppliers, customers, and billing for supermarkets. Developed using SQL for data management and Python for backend operations with efficient query handling.</p>
+          </article>
+        </div>
+      </div>
+
+      <div id="contact" class="card reveal">
+        <h3>Contact</h3>
+        <p style="color:var(--muted)">Email: <span id="email">cse240001049@iiti.ac.in</span></p>
+        <p style="color:var(--muted)">GitHub: <a href="https://github.com/Bhavyasri104" target="_blank">Bhavyasri104</a></p>
+        <p style="color:var(--muted)">Contact Number: 7036515246</p>
+        <div style="margin-top:12px">
+          <a class="btn btn-primary" href="mailto:cse240001049@iiti.ac.in">Email me</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>© Paruchuri Bhavya Sri • Built with HTML, CSS & Python (ML)</div>
+      <div style="color:var(--muted)">Host on GitHub Pages • Submit code in PDF</div>
+    </footer>
+  </div>
+
+  <script>
+    function scrollToSection(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'})}
+    function copyEmail(){navigator.clipboard.writeText('cse240001049@iiti.ac.in').then(()=>alert('Email copied to clipboard'))}
+
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}})
+    },{threshold:0.12})
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el))
+  </script>
+</body>
+</html>
